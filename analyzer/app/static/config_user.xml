@@ -1,0 +1,1 @@
+<?xml version="1.0" ?><config><erosion><active>1</active><kernel>0</kernel><range>3</range></erosion><dilate><active>1</active><kernel>0</kernel><range>3</range></dilate><threshold><active>1</active><type>0</type><range>50</range><maxvalue></maxvalue></threshold></config>

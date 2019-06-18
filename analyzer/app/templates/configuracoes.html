@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Configurações{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+      <h3 class="text-center margin">Configurações</h3>
+    </div>
+  </div>
+  <form method="POST" id="form_configuracao">{% csrf_token %}
+    <div class="row">
+      <div class="col-md-12 col-lg-3">
+        <div class="row row-filter">
+          <div class="col-6">
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" value="1" name="erode" id="erode">
+              <label class="custom-control-label" for="erode">Erosão</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <select class="form-control form-control-sm" name="kernel_erode" id="kernel_erode">
+              <option value="0" selected="selected">Retangular</option>
+              <option value="1">Cruz</option>
+              <option value="2">Elipse</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <input type="range" class="custom-range" name="range_erode" id="range_erode" min="1" max="5" value="3">
+          </div>
+        </div>
+        <div class="row row-filter">
+          <div class="col-6">
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" value="1" name="dilate" id="dilate">
+              <label class="custom-control-label" for="dilate">Dilatação</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <select class="form-control form-control-sm" name="kernel_dilate" id="kernel_dilate">
+              <option value="0" selected="selected">Retangular</option>
+              <option value="1">Cruz</option>
+              <option value="2">Elipse</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <input type="range" class="custom-range" name="range_dilate" id="range_dilate" min="1" max="5" value="3">
+          </div>
+        </div>
+        <div class="row row-filter">
+          <div class="col-6">
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" value="1" name="threshold" id="threshold">
+              <label class="custom-control-label" for="threshold">Limiarização</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <select class="form-control form-control-sm" name="type_threshold" id="type_threshold">
+              <option value="0" selected="selected">Binário</option>
+              <option value="1">Binário invertido</option>
+              <option value="2">Truncate</option>
+              <option value="3">Para zero</option>
+              <option value="4">Para zero invertido</option>
+            </select>
+          </div>
+          <div class="col-12 d-flex">
+            <input class="form-control form-control-sm flex-fill hidden" type="number" name="max_threshold" id="max_threshold" placeholder="Valor máx.">
+            <input type="range" class="custom-range flex-fill" name="range_threshold" id="range_threshold">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-12">
+            <button type="submit" id="aplicar_config" class="btn btn-dark btn-block margin-bottom">Salvar configuração</button>
+          </div>
+        </div>
+      </div>
+  </form>
+    <div class="col-md-12 col-lg-9">
+      <div class="row">
+        <div class="col-12 text-center">
+          {% if imagem == 1 %}
+            <img src="{% static 'imgs/exemplo.jpg' %}" class="img-adjust-configuration">
+            <!-- <div id="processed_image"></div> -->
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="{% static 'js/configuracoes.js' %}" type="text/javascript"></script>
+{% endblock %}

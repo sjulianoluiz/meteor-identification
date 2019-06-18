@@ -1,0 +1,11 @@
+.margin{margin: 1.2em;}
+.margin-bottom{margin-bottom: 1.2em;}
+@media screen and (min-width: 768px){
+  video{width: 75%; height: auto;}
+  .img-adjust-configuration{padding-left: 60px; padding-right: 80px;}
+}
+@media screen and (max-width: 768px){video{width: 100%; height: auto;}}
+a.btn-dark{color: white;}
+.hidden{display: none;}
+#max_threshold{margin-right: 20px;}
+.img-adjust-configuration{width: 100%; height: auto;}
