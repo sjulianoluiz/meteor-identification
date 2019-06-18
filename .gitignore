@@ -1,0 +1,10 @@
+env/
+analyzer/.vscode/
+analyzer/analyzer/__pycache__/
+analyzer/app/__pycache__/
+app/__pycache__/
+app/build/
+.vscode/
+analyzer.code-workspace
+dataset/
+catboost_info/
